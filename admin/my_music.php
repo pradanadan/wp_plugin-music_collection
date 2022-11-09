@@ -2,9 +2,9 @@
 
 function dnmc_setup_custom_post_my_music() {
     $labels = array (
-        'name' => _x('Music', 'dnmc_mymusic'),
-        'singular_name' => _x('Music', 'dnmc_mymusic'),
-        'add_new' => _x('Add New Music', 'dnmc_mymusic'),
+        'name' => _x('Music', 'my_music'),
+        'singular_name' => _x('Music', 'my_music'),
+        'add_new' => _x('Add New Music', 'my_music'),
         'add_new_item' => __('Add New Music'),
         'edit_item' => __('Edit Music'),
         'new_item' => __('New Music'),
@@ -25,6 +25,6 @@ function dnmc_setup_custom_post_my_music() {
         'has_archive' => true,
         'menu_icon' => 'dashicons-playlist-audio'
     );
-    register_post_type('dnmc_mymusic', $args);
+    register_post_type('my_music', $args);
 }
 add_action('init', 'dnmc_setup_custom_post_my_music');

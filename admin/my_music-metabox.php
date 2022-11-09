@@ -4,7 +4,7 @@ class DNMC_My_Music_Metabox{
     public function __construct(){
         add_action('post_edit_form_tag', [$this, 'update_edit_form']);
         add_action('add_meta_boxes', [$this, 'add_metaboxes'] );
-        add_action('save_post', [$this, 'save_description']);
+        add_action('post_updated', [$this, 'save_description']);
     }
 
     function update_edit_form() {
@@ -12,7 +12,7 @@ class DNMC_My_Music_Metabox{
     }
 
     public function add_metaboxes(){
-        add_meta_box( 'music_description_metabox', __( 'Music Description', 'dnmc_mymusic' ), [$this, 'render_description'], 'dnmc_mymusic');
+        add_meta_box( 'music_description_metabox', __( 'Music Description', 'my_music' ), [$this, 'render_description'], 'my_music');
     }
 
     public function render_description(){
