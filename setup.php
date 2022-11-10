@@ -40,9 +40,9 @@ function dnmc_my_music_scripts() {
 	global $post;
 
 	if (isset($post->post_type) && $post->post_type == 'my_music') {
-		wp_enqueue_style( 'style', DNMC_URL . '/assets/css/bootstrap.min.css' );
-		wp_enqueue_script( 'script', DNMC_URL . '/assets/js/bootstrap.bundle.min.js');
-		wp_enqueue_style( 'style', DNMC_URL . '/assets/css/main.css' );
+		wp_enqueue_style( 'bootstrap-style', DNMC_URL . '/assets/css/bootstrap.min.css' );
+		wp_enqueue_script( 'bootstrap-script', DNMC_URL . '/assets/js/bootstrap.bundle.min.js');
+		wp_enqueue_style( 'main-style', DNMC_URL . '/assets/css/main.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dnmc_my_music_scripts' );

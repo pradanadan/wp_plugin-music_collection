@@ -25,29 +25,31 @@ class DNMC_My_Music_Metabox{
         $music_file = $is_edit ? get_post_meta($post_id , 'dnmc_music_file', true)['url'] : null;
         
         wp_nonce_field(plugin_basename(__FILE__), 'dnmc_add_music_nonce');
+
+        $this->admin_enqueue_scripts();
         ?>
-        <div>
-            <label for="dnmc_music_title">Title: </label>
-            <input type="text" name="post_title" value="<?php echo $music_title ?>"/>
+        <div class="row">
+            <div class="col-lg-5"><label for="dnmc_music_title">Title: </label></div>
+            <div class="col-lg-7"><input type="text" name="post_title" class="metaboxInput" value="<?php echo $music_title ?>"/></div>
         </div>
-        <div>
-            <label for="dnmc_music_album">Album: </label>
-            <input type="text" name="dnmc_music_album" value="<?php echo $music_album ?>"/>
+        <div class="row">
+            <div class="col-lg-5"><label for="dnmc_music_album">Album: </label></div>
+            <div class="col-lg-7"><input type="text" name="dnmc_music_album" value="<?php echo $music_album ?>"/></div>
         </div>
-        <div>
-            <label for="dnmc_music_file">Image: </label>
+        <div class="row">
+            <div class="col-lg-5"><label for="dnmc_music_file">Image: </label></div>
             <?php if (empty($music_image)){ ?>
-                <input type="file" name="dnmc_music_image" id="dnmc_music_image"/>
+                <div class="col-lg-7"><input type="file" name="dnmc_music_image" id="dnmc_music_image"/></div>
             <?php } else { ?>
-                <img src="<?php echo $music_image ?>" height="100"/>
+                <div class="col-lg-7"><img src="<?php echo $music_image ?>" height="100"/></div>
             <?php } ?>
         </div>
-        <div>
-            <label for="dnmc_music_file">File: </label>
+        <div class="row">
+            <div class="col-lg-5"><label for="dnmc_music_file">File: </label></div>
             <?php if (empty($music_file)){ ?>
-                <input type="file" name="dnmc_music_file" id="dnmc_music_file"/>
+                <div class="col-lg-7"><input type="file" name="dnmc_music_file" id="dnmc_music_file"/></div>
             <?php } else { ?>
-                <?php echo $music_file ?>
+                <div class="col-lg-7"><?php echo $music_file ?></div>
             <?php } ?>
         </div>
         <?php
@@ -139,6 +141,12 @@ class DNMC_My_Music_Metabox{
         else
             return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
     }
+
+    function admin_enqueue_scripts() {
+        wp_enqueue_style( 'bootstrap-style', DNMC_URL . '/assets/css/bootstrap.min.css' );
+        wp_enqueue_style( 'admin-style', DNMC_URL . '/assets/css/admin.css' );
+        wp_enqueue_script( 'bootstrap-script', DNMC_URL . '/assets/js/bootstrap.bundle.min.js');
+    } 
   
 }
 
