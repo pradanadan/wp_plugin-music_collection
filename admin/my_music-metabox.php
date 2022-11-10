@@ -28,29 +28,36 @@ class DNMC_My_Music_Metabox{
 
         $this->admin_enqueue_scripts();
         ?>
+        <div class="metaboxForm">
         <div class="row">
-            <div class="col-lg-5"><label for="dnmc_music_title">Title: </label></div>
-            <div class="col-lg-7"><input type="text" name="post_title" class="metaboxInput" value="<?php echo $music_title ?>"/></div>
+            <div class="col-lg-1"><label for="dnmc_music_title">Title: </label></div>
+            <div class="col-lg-10"><input type="text" name="post_title" class="metaboxInput" value="<?php echo $music_title ?>"/></div>
         </div>
         <div class="row">
-            <div class="col-lg-5"><label for="dnmc_music_album">Album: </label></div>
-            <div class="col-lg-7"><input type="text" name="dnmc_music_album" value="<?php echo $music_album ?>"/></div>
+            <div class="col-lg-1"><label for="dnmc_music_album">Album: </label></div>
+            <div class="col-lg-10"><input type="text" class="metaboxInput" name="dnmc_music_album" value="<?php echo $music_album ?>"/></div>
         </div>
         <div class="row">
-            <div class="col-lg-5"><label for="dnmc_music_file">Image: </label></div>
+            <div class="col-lg-1"><label for="dnmc_music_file">Image: </label></div>
             <?php if (empty($music_image)){ ?>
-                <div class="col-lg-7"><input type="file" name="dnmc_music_image" id="dnmc_music_image"/></div>
+                <div class="col-lg-10"><input type="file" name="dnmc_music_image" id="dnmc_music_image"/></div>
             <?php } else { ?>
-                <div class="col-lg-7"><img src="<?php echo $music_image ?>" height="100"/></div>
+                <div class="col-lg-10"><img src="<?php echo $music_image ?>" height="100"/></div>
             <?php } ?>
         </div>
         <div class="row">
-            <div class="col-lg-5"><label for="dnmc_music_file">File: </label></div>
+            <div class="col-lg-1"><label for="dnmc_music_file">File: </label></div>
             <?php if (empty($music_file)){ ?>
-                <div class="col-lg-7"><input type="file" name="dnmc_music_file" id="dnmc_music_file"/></div>
+                <div class="col-lg-10"><input type="file" name="dnmc_music_file" id="dnmc_music_file"/></div>
             <?php } else { ?>
-                <div class="col-lg-7"><?php echo $music_file ?></div>
+                <div class="col-lg-10">
+                    <audio controls>
+                        <source src="<?php echo $music_file ?>" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             <?php } ?>
+        </div>
         </div>
         <?php
 
