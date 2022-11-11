@@ -46,3 +46,6 @@ function dnmc_my_music_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dnmc_my_music_scripts' );
+
+// Add music-list shortcode
+require_once( DNMC_PATH.'/shortcodes/music-list.php' );
