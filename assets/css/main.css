@@ -67,9 +67,11 @@ section {
 }
 .arrow.left {
   left: -5em;
+  display: none;
 }
 .arrow.right {
   right: -5em;
+  display: none;
 }
 
 .music-player {
