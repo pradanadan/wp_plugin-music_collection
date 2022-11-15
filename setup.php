@@ -43,6 +43,8 @@ function dnmc_my_music_scripts() {
 		wp_enqueue_style( 'bootstrap-style', DNMC_URL . '/assets/css/bootstrap.min.css' );
 		wp_enqueue_script( 'bootstrap-script', DNMC_URL . '/assets/js/bootstrap.bundle.min.js');
 		wp_enqueue_style( 'main-style', DNMC_URL . '/assets/css/main.css' );
+		wp_enqueue_script( 'main-script', DNMC_URL . '/assets/js/main.js');
+		wp_enqueue_style( 'normalize', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dnmc_my_music_scripts' );
