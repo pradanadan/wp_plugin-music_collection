@@ -4,8 +4,7 @@ function showPreview(event){
       var preview = document.getElementById("imgPreview");
       var btn = document.getElementById("imageBtnLabel");
       preview.src = src;
-      preview.style.display = "block";
-      btn.innerHTML = "Change Image";
+      btn.innerHTML = "Change IMG";
     }
 }
 

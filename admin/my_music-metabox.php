@@ -29,26 +29,27 @@ class DNMC_My_Music_Metabox{
         $this->admin_enqueue_scripts();
         ?>
         <div class="metaboxForm">
-        <div class="row">
+        <div class="row textRow">
             <div class="col-lg-1"><label for="dnmc_music_title">Title: </label></div>
             <div class="col-lg-10"><input type="text" name="post_title" class="metaboxInput" value="<?php echo $music_title ?>"/></div>
         </div>
-        <div class="row">
+        <div class="row textRow">
             <div class="col-lg-1"><label for="dnmc_music_album">Album: </label></div>
             <div class="col-lg-10"><input type="text" class="metaboxInput" name="dnmc_music_album" value="<?php echo $music_album ?>"/></div>
         </div>
-        <div class="row">
-            <div class="col-lg-5">
+        <div class="row previewRow">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div>
                 <?php if (empty($music_image)){ ?>
-                    <img id="imgPreview" style="display:none"/>
-                    <label for="music_image_input" class="fileInputLabel" id="imageBtnLabel">Upload Image</label>
+                    <img id="imgPreview" src="<?php echo DNMC_URL . '/assets/images/blank_img.png' ?>"/>
                 <?php } else { ?>
-                    <img src="<?php echo $music_image ?>" id="imgPreview" style="display:block"/>
-                    <label for="music_image_input" class="fileInputLabel" id="imageBtnLabel">Change Image</label>
+                    <img src="<?php echo $music_image ?>" id="imgPreview"/>
                 <?php } ?>
-                <input type="file" name="dnmc_music_image" id="music_image_input" accept="image/*" onchange="showPreview(event);">     
+                </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 d-flex justify-content-center">
+                <div class="align-self-center">
                 <audio controls id="audioControl">
                     <?php if (empty($music_file)){ ?>
                         <source id="audioSrcPreview" src="" type="audio/mpeg">
@@ -57,12 +58,30 @@ class DNMC_My_Music_Metabox{
                     <?php } ?>
                     Your browser does not support the audio element.
                 </audio>
+                </div>
+            </div>
+        </div>
+        <div class="row labelRow">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div>
+                <?php if (empty($music_image)){ ?>
+                    <label for="music_image_input" class="fileInputLabel" id="imageBtnLabel">Upload IMG</label>
+                <?php } else { ?>
+                    <label for="music_image_input" class="fileInputLabel" id="imageBtnLabel">Change IMG</label>
+                <?php } ?>
+                <input type="file" name="dnmc_music_image" id="music_image_input" accept="image/*" onchange="showPreview(event);">
+                </div>     
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center">
+                <div>
                 <?php if (empty($music_file)){ ?>
                     <label for="music_file_input" id="fileBtnLabel" class="fileInputLabel">Upload MP3</label>
                 <?php } else { ?>
                     <label for="music_file_input" id="fileBtnLabel" class="fileInputLabel">Change MP3</label>
                 <?php } ?>
                 <input type="file" name="dnmc_music_file" id="music_file_input" accept="audio/*" onchange="showAudio(event);">
+                </div>
             </div>
         </div>
         <?php

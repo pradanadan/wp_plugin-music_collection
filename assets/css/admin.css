@@ -1,4 +1,4 @@
-.metaboxForm .row{
+.textRow{
     margin: 10px 0;
 }
 
@@ -6,10 +6,18 @@
     width: 100%;
 }
 
+.previewRow{
+    margin-top: 20px;
+}
+
+.labelRow{
+    margin-top: 10px;
+}
+
 #imgPreview {
     width:100%;
+    height: 13vw;
     object-fit: cover;
-    margin-bottom:30px;
 }
 
 #music_image_input {
@@ -22,17 +30,15 @@
   
 .fileInputLabel{
     display:block;
-    width:45%;
-    height:45px;
-    margin-left: 25%;
-    line-height:50px;
+    width:10vw;
+    padding: 10px;
     text-align:center;
     background:#1172c2;
     color:#fff;
-    font-size:1em;
+    font-size:0.9em;
     font-family:"Open Sans",sans-serif;
     text-transform:Uppercase;
-    font-weight:600;
+    font-weight:500;
     border-radius:5px;
     cursor:pointer;
 }
