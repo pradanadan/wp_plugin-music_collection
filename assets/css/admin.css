@@ -5,3 +5,34 @@
 .metaboxInput{
     width: 100%;
 }
+
+#imgPreview {
+    width:100%;
+    object-fit: cover;
+    margin-bottom:30px;
+}
+
+#music_image_input {
+    display:none;
+}
+
+#music_file_input{
+    display:none;
+}
+  
+.fileInputLabel{
+    display:block;
+    width:45%;
+    height:45px;
+    margin-left: 25%;
+    line-height:50px;
+    text-align:center;
+    background:#1172c2;
+    color:#fff;
+    font-size:1em;
+    font-family:"Open Sans",sans-serif;
+    text-transform:Uppercase;
+    font-weight:600;
+    border-radius:5px;
+    cursor:pointer;
+}
